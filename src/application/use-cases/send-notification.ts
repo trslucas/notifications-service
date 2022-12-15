@@ -21,9 +21,9 @@ export class SendNotification {
     const { category, content, recipientId } = request;
 
     const notification = new Notification({
-      category,
-      content: new Content(content),
       recipientId,
+      content: new Content(content),
+      category,
     });
 
     await this.notificationsRepository.create(notification);
